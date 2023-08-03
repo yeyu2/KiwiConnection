@@ -10,7 +10,7 @@ class KiwiConnection(ExperimentalBaseConnection):
         if 'apikey' in kwargs:
             key = kwargs.pop('apikey')
         else:
-            key = self._secrets['apikey']
+            key = self._secrets["KIWI_API_KEY"]
         self.headers = {"apikey": key}
         return self.headers
 
