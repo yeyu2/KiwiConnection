@@ -12,6 +12,8 @@ st.title("Flight Search")
 st.write("This is an online flight search system that implements Streamlit connection feature to access Kiwi API.")
 conn = st.experimental_connection("kiwiapi", type=KiwiConnection, apikey=st.secrets["KIWI_API_KEY"])
 
+st.write("My cool secrets:", st.secrets["my_cool_secrets"]["things_i_like"])
+st.write("My Key:", st.secrets.KIWI_API_KEY)
 
 flights = []
 col1, col2 = st.columns([0.5, 0.5], gap='medium')
