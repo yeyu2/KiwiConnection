@@ -4,7 +4,6 @@ from streamlit.runtime.caching import cache_data
 import requests
 
 class KiwiConnection(ExperimentalBaseConnection):
-    """Basic st.experimental_connection implementation for DuckDB"""
 
     def _connect(self, **kwargs) -> dict:
         if 'apikey' in kwargs:
