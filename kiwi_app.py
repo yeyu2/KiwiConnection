@@ -10,7 +10,7 @@ def format_datetime(datetime_str):
 st.set_page_config(layout="wide")
 st.title("Flight Search")
 st.write("This is an online flight search system that implements Streamlit connection feature to access Kiwi API.")
-conn = st.experimental_connection("kiwiapi", type=KiwiConnection, apikey='iQnT_tFMJE1hTe3nxAO2bDCk6Gb0tXGH')
+conn = st.experimental_connection("kiwiapi", type=KiwiConnection)
 
 
 flights = []
