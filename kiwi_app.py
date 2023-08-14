@@ -37,18 +37,18 @@ col1, col2 = st.columns([0.5, 0.5], gap='medium')
 with col1:
     with st.form("my_form"):
         fly_from = st.text_input("**From airport**", "JFK")
-        fly_to = st.text_input("To airport", "PRG")
+        fly_to = st.text_input("**To airport**", "PRG")
 
-        date_from = st.date_input("Departure date", value=datetime.date(2023, 9, 3))
-        date_to = st.date_input("Return date", value=datetime.date(2023, 9, 9))
+        date_from = st.date_input("**Departure date**", value=datetime.date(2023, 9, 3))
+        date_to = st.date_input("**Return date**", value=datetime.date(2023, 9, 9))
         date_from_str = date_from.strftime("%d/%m/%Y") 
         date_to_str = date_to.strftime("%d/%m/%Y")
-        adults = st.number_input("Adults", min_value=1) 
-        children = st.number_input("Children", min_value=0)
-        infants = st.number_input("Infants", min_value=0)
+        adults = st.number_input("**Adults**", min_value=1) 
+        children = st.number_input("**Children**", min_value=0)
+        infants = st.number_input("**Infants**", min_value=0)
 
-        sort = st.selectbox("Sort by", ["price", "duration"])
-        limit = st.number_input("Limit", min_value=10)
+        sort = st.selectbox("**Sort by**", ["price", "duration"])
+        limit = st.number_input("**Limit**", min_value=10)
 
         submitted = st.form_submit_button("Submit")
 
@@ -89,5 +89,5 @@ with col2:
         utc_arrival_time = flight["route"][connection_number]["utc_arrival"]
         total_hours = (isoparse(utc_arrival_time) - isoparse(utc_departure_time)).total_seconds() / 3600
 
-        with st.expander(f'{overall_departure_time_fm} - {overall_arrival_time_fm}, {city_from}/{fly_from} - {city_to}/{fly_to}, total_hours: {total_hours:.1f}, #Connects:{connection_number}, Price:{price}USD'):
+        with st.expander(f':green[**{overall_departure_time_fm} - {overall_arrival_time_fm}, {city_from}/{fly_from} - {city_to}/{fly_to}, total_hours: {total_hours:.1f}, #Connects:{connection_number}, Price:{price}USD**]'):
             st.json(flight)
