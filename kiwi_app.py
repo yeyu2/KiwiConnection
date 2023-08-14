@@ -36,7 +36,7 @@ flights = []
 col1, col2 = st.columns([0.5, 0.5], gap='medium')
 with col1:
     with st.form("my_form"):
-        fly_from = st.text_input("From airport", "JFK")
+        fly_from = st.text_input("**From airport**", "JFK")
         fly_to = st.text_input("To airport", "PRG")
 
         date_from = st.date_input("Departure date", value=datetime.date(2023, 9, 3))
