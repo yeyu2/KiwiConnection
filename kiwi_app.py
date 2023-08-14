@@ -21,9 +21,10 @@ def add_bg_from_url():
          unsafe_allow_html=True
      )
 
+st.set_page_config(layout="wide")
 add_bg_from_url() 
 
-st.set_page_config(layout="wide")
+
 st.title("Flight Search")
 st.write("This is an online flight search system that implements Streamlit connection feature to access Kiwi API.")
 conn = st.experimental_connection("kiwiapi", type=KiwiConnection, apikey=st.secrets["KIWI_API_KEY"])
