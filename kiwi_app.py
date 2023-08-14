@@ -89,5 +89,5 @@ with col2:
         utc_arrival_time = flight["route"][connection_number]["utc_arrival"]
         total_hours = (isoparse(utc_arrival_time) - isoparse(utc_departure_time)).total_seconds() / 3600
 
-        with st.expander(f':green[**{overall_departure_time_fm} - {overall_arrival_time_fm}, {city_from}/{fly_from} - {city_to}/{fly_to}, total_hours: {total_hours:.1f}, #Connects:{connection_number}, Price:{price}USD**]'):
+        with st.expander(f":blue[{overall_departure_time_fm} - {overall_arrival_time_fm}, {city_from}/{fly_from} - {city_to}/{fly_to}, total_hours: {total_hours:.1f}, #Connects:{connection_number}, Price:{price}USD]"):
             st.json(flight)
