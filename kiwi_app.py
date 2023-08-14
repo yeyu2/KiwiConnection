@@ -7,6 +7,22 @@ def format_datetime(datetime_str):
     time_part = time_part[:-5]  # Removing the ".000Z" from the time
     return f"{date_part} {time_part}"
 
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://cdn.pixabay.com/photo/2019/09/05/15/25/airbus-4454338_1280.jpg");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+add_bg_from_url() 
+
 st.set_page_config(layout="wide")
 st.title("Flight Search")
 st.write("This is an online flight search system that implements Streamlit connection feature to access Kiwi API.")
